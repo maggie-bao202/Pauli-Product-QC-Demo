@@ -20,6 +20,7 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest"]
+notebook = ["jupyter"]
 
 [tool.setuptools]
 packages = ["ppqc"]

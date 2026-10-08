@@ -28,6 +28,10 @@ python3 -m venv .venv
 a local checkout instead, run `.venv/bin/pip install -e /path/to/LightStim` and then
 `.venv/bin/pip install -e . --no-deps`.
 
+The same pipeline as a step-by-step walkthrough, with outputs saved, is in
+[`notebooks/pauli_product_qc.ipynb`](notebooks/pauli_product_qc.ipynb). To rerun it,
+install with `".[notebook]"` and open it in Jupyter; it takes about five minutes.
+
 ## What the demo does
 
 1. **Write the circuit as Pauli rotations.** `ppqc.litinski_fig4()` is the paper's
@@ -116,3 +120,4 @@ PR merges.
 | `ppqc/execute.py` | the rotation gadget, correction tracking, Clifft sampling |
 | `ppqc/reference.py` | dense statevector reference used for checking |
 | `demo.py` | the end-to-end run and plot |
+| `notebooks/pauli_product_qc.ipynb` | the pipeline, step by step |
