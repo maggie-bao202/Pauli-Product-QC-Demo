@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pauli-product-qc-demo"
+version = "0.1.0"
+description = "Pauli product quantum computation demo: Litinski's Fig. 4 circuit run by Pauli product measurements, with magic states from H6 distillation (LightStim) simulated in Clifft."
+requires-python = ">=3.12"
+dependencies = [
+    "stim>=1.16",
+    "numpy>=1.26",
+    "clifft>=0.11",
+    "matplotlib",
+    # The H6 distillation protocol is not on QuTone/LightStim main yet (open
+    # PR #108), so this pins the fork commit that carries it. Switch to
+    # QuTone/LightStim main once the PR merges.
+    "lightstim @ git+ssh://git@github.com/maggie-bao202/LightStim.git@a73ed0509a4c25a4b32f937b90d7b863d4041108",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["ppqc"]
